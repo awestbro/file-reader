@@ -6,6 +6,6 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/tools.cli "0.3.1"]]
   :main ^:skip-aot file-reader.core
-  :target-path "target/%s"
+  :target-path "target/"
   :profiles {:uberjar {:aot :all}}
   :bin {:name "file-reader"})

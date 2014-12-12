@@ -4,13 +4,14 @@ FIXME: description
 
 ## Installation
 
-Download from http://example.com/FIXME.
+git clone 
+lein install
 
 ## Usage
 
-FIXME: explanation
-
     $ java -jar file-reader-0.1.0-standalone.jar [args]
+
+run lein bin to generate target/file-reader (executable script)
 
 ## Options
 

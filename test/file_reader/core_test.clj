@@ -5,8 +5,8 @@
 ; (use 'file-reader.core :reload)
 
 (defn run-main []
-  (-main "/Users/westbrook/Projects/arena-online" "files" 10))
+  (-main "-f" "20" "/Users/westbrook/Projects/arena-online"))
 
 (run-main)
 
-(get [1, 2, 3] 1)
+; (get [1, 2, 3] 1)

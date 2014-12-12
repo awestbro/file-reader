@@ -1,6 +1,6 @@
 (ns file-reader.core
 	(:require [clojure.tools.cli :refer [parse-opts]]
-            [clojure.string :as string]]))
+              [clojure.string :as string])
 	(:gen-class))
 
 (def num-processed-bytes (atom 0))

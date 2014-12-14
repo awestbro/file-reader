@@ -14,11 +14,11 @@
 (def cli-options 
 	[["-f" "--f FILE" "Number of files to process"
 	:id :num-files
-	:default -1
+	:default 0
 	:parse-fn #(Integer/parseInt %)]
 	["-s" "--s SIZE" "Read until byte size is met"
   :id :num-bytes
-	:default -1
+	:default 0
 	:parse-fn #(Long/parseLong %)]
   ["-v" nil "Prints status of file-reader as information is being processed"
   :id :verbose

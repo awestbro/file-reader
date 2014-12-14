@@ -9,14 +9,6 @@
 (defn get-files [dir conf]
 	"Gets a list of files base on the directory")
 
-(defn parse-conf [args]
-	(println "args: " args)
-	(println "args[1]: " (get args 1))
-	(let [file-path (first args)
-		parameter (get args 1)
-		value 	  (get args 2)]
-	(println "Recieved " file-path ", " parameter ", " value)))
-
 ;; Command Line Option Configuration
 
 (def cli-options 
@@ -24,11 +16,15 @@
 	:id :num-files
 	:default -1
 	:parse-fn #(Integer/parseInt %)]
-	 ["--s" "--s SIZE" "Read until byte size is met"
+	["-s" "--s SIZE" "Read until byte size is met"
   :id :num-bytes
 	:default -1
 	:parse-fn #(Long/parseLong %)]
-	 ["-h" "--help"]])
+  ["-v" nil "Prints status of file-reader as information is being processed"
+  :id :verbose
+  :default 0
+  :assoc-fn (fn [m k _] (update-in m [k] inc))]
+	["-h" "--help"]])
 
 (defn usage [options-summary]
 	(->> ["File Reader"

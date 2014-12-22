@@ -1,6 +1,7 @@
 # file-reader
 
 Small command line script for reading files until a size limit is reached, or a max number of files is reached.
+
 Replace the file-processor fn as needed
 
 ## Installation

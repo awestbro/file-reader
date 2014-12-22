@@ -1,37 +1,14 @@
 # file-reader
 
-FIXME: description
+Small command line script for reading files until a size limit is reached, or a max number of files is reached.
+Replace the file-processor fn as needed
 
 ## Installation
 
 git clone 
 lein install
+lein bin
+chmod 777 target/file-reader
 
 ## Usage
-
-    $ java -jar file-reader-0.1.0-standalone.jar [args]
-
-run lein bin to generate target/file-reader (executable script)
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2014 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+./target/file-reader -f 100 /path/to/some/dir

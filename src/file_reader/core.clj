@@ -53,7 +53,11 @@
 	:default 0
 	:parse-fn #(Integer/parseInt %)]
 	["-s" "--s SIZE" "Read until byte size is met"
+<<<<<<< HEAD
   	:id :num-bytes
+=======
+  :id :num-bytes
+>>>>>>> 82732d565b40ed5f764fe3b620204da27f0298fb
 	:default 0
 	:parse-fn #(Long/parseLong %)]
  ;    ["-v" nil "Prints status of file-reader as information is being processed"

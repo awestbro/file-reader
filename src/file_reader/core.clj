@@ -17,7 +17,7 @@
          num-files 0
          output []]
     (if (or (empty? file-list) (> (+ (.length file) size) max-bytes)) {:files output :size size :num-files num-files}
-     	(recur (first file-list) (rest file-list) (+ size (.length file)) (inc num-files) (conj output file))	
+     	(recur (first file-list) (rest file-list) (+ size (.length file)) (inc num-files) (conj output file))
     )))
 
 (defn get-files-by-number [files max-number]
@@ -27,7 +27,7 @@
          num-files 0
          output []]
     (if (or (empty? file-list) (> (inc num-files) max-number)) {:files output :size size :num-files num-files}
-     	(recur (first file-list) (rest file-list) (+ size (.length file)) (inc num-files) (conj output file))	
+     	(recur (first file-list) (rest file-list) (+ size (.length file)) (inc num-files) (conj output file))
     )))
 
 (defn get-files [dir conf]
@@ -36,8 +36,8 @@
          byte-mode (if-not-zero num-bytes)
          size-mode (if-not-zero num-files)
          file-list (file-seq (clojure.java.io/file dir))]
-    
-    (if byte-mode 
+
+    (if byte-mode
       (get-files-by-size file-list num-bytes)
       (get-files-by-number file-list num-files))))
 
@@ -47,17 +47,13 @@
 
 ;; Command Line Option Configuration
 
-(def cli-options 
+(def cli-options
 	[["-f" "--f FILE" "Number of files to process"
 	:id :num-files
 	:default 0
 	:parse-fn #(Integer/parseInt %)]
 	["-s" "--s SIZE" "Read until byte size is met"
-<<<<<<< HEAD
-  	:id :num-bytes
-=======
   :id :num-bytes
->>>>>>> 82732d565b40ed5f764fe3b620204da27f0298fb
 	:default 0
 	:parse-fn #(Long/parseLong %)]
  ;    ["-v" nil "Prints status of file-reader as information is being processed"
@@ -95,7 +91,7 @@
 			(not= (count arguments) 1) (exit 1 (usage summary))
 			errors (exit 1 (error-msg errors)))
  		(let [start     (System/currentTimeMillis)
-         	  file-list (get-files (last args) options)] 
+         	  file-list (get-files (last args) options)]
      		(pmap file-processor (:data file-list))
        		(println "Processed: " (:num-files file-list) " files, with a total size of " (:size file-list) " bytes in " (- (System/currentTimeMillis) start) "ms"))))
 
